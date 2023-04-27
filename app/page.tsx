@@ -1,10 +1,11 @@
 import Navbar from './components/navbar/Navbar';
+import PersonalInfo from './components/personalInfo/PersonalInfo';
 
 const page = () => (
   <>
     <Navbar />
     <div className='mt-[60px]'>
-      <h2>Luis Portfolio</h2>
+      <PersonalInfo />
     </div>
   </>
 );

@@ -15,7 +15,9 @@ export const useNavbar = () => {
     });
 
     window.addEventListener('scroll', () => {
-      setShowDropdown(() => false);
+      if (showDropdown) {
+        setShowDropdown(() => false);
+      }
     });
   }, []);
 

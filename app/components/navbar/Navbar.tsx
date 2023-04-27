@@ -1,13 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import navbarStyles from './navbar.module.css';
+import { IoMdArrowDropdown } from 'react-icons/io';
 import DesktopDropdown from './DesktopDropdown';
 
+//TODO: Animate the dropdown icon
 const Navbar = () => {
   const [showMobileNavbar, setshowMobileNavbar] = useState<boolean>(false);
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
   const handleMenuClick = () => setshowMobileNavbar(!showMobileNavbar);
+
+  useEffect(() => {
+    window.addEventListener('click', ({ target }: { target: any }) => {
+      if (target.id === 'skillsetDropdownButton') return;
+
+      setShowDropdown(() => false);
+    });
+  }, []);
 
   return (
     <nav className='justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
@@ -50,8 +61,18 @@ const Navbar = () => {
           <a href='#'>Projects</a>
         </li>
         <li className='flex items-center'>
-          <button>Skillset</button>
-          <DesktopDropdown show />
+          <span
+            id='skillsetDropdownButton'
+            className='flex items-center hover:cursor-pointer'
+            onClick={() => setShowDropdown(!showDropdown)}
+          >
+            Skillset
+            <IoMdArrowDropdown
+              size={28}
+              className={showDropdown === true ? 'rotate-180' : 'rotate-0'}
+            />
+          </span>
+          <DesktopDropdown show={showDropdown} />
         </li>
       </ul>
     </nav>

@@ -8,20 +8,45 @@ const Navbar = () => {
   // const [dropdownActive, setDropdownActive] = useState<boolean>(false);
 
   return (
-    <nav className='flex justify-between bg-[#0B1822] px-8 py-3 text-white'>
-      <GiHamburgerMenu
-        size={32}
-        className='block hover:cursor-pointer sm:hidden'
-      />
+    <nav className='justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
+      <div className='order-2 flex justify-between'>
+        <GiHamburgerMenu
+          size={32}
+          className='block hover:cursor-pointer sm:hidden'
+        />
 
-      <ul className='hidden flex-row flex-wrap gap-7 text-xl font-semibold tracking-wide sm:flex'>
-        <li>Languages</li>
-        <li>Projects</li>
-        <li>Skillset</li>
+        <span className={navbarStyles.navbarBrand}>
+          {/*<LC />*/}
+          &lt;LC /&gt;
+        </span>
+      </div>
+
+      <hr className='my-3 block sm:hidden' />
+
+      <ul
+        className='
+          order-1 
+          flex 
+          flex-col
+          flex-wrap 
+          gap-2 
+          text-xl 
+          font-semibold
+          tracking-wide
+          sm:flex-row
+          sm:gap-7
+        '
+      >
+        <li className='flex items-center'>
+          <a href='#'>Languages</a>
+        </li>
+        <li className='flex items-center'>
+          <a href='#'>Projects</a>
+        </li>
+        <li className='flex items-center'>
+          <a href='#'>Skillset</a>
+        </li>
       </ul>
-      <span className={navbarStyles.navbarBrand}>
-        &lt;LC /&gt; {/*<LC />*/}
-      </span>
     </nav>
   );
 };

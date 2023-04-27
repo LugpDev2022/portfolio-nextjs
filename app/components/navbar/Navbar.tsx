@@ -27,7 +27,7 @@ const Navbar = () => {
   } = useNavbar();
 
   return (
-    <nav className='justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
+    <nav className='fixed top-0 w-full justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
       <div className='order-2 flex justify-between'>
         <GiHamburgerMenu
           size={38}

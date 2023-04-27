@@ -1,15 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import navbarStyles from './navbar.module.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import navbarStyles from './navbar.module.css';
+import DesktopDropdown from './DesktopDropdown';
 
 const Navbar = () => {
   const [showMobileNavbar, setshowMobileNavbar] = useState<boolean>(false);
-
-  const handleMenuClick = () => {
-    setshowMobileNavbar(!showMobileNavbar);
-  };
+  const handleMenuClick = () => setshowMobileNavbar(!showMobileNavbar);
 
   return (
     <nav className='justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
@@ -20,10 +18,10 @@ const Navbar = () => {
           onClick={handleMenuClick}
         />
 
-        <span className={navbarStyles.navbarBrand}>
+        <a href='#' className={navbarStyles.navbarBrand}>
           {/*<LC />*/}
           &lt;LC /&gt;
-        </span>
+        </a>
       </div>
 
       <hr
@@ -52,7 +50,8 @@ const Navbar = () => {
           <a href='#'>Projects</a>
         </li>
         <li className='flex items-center'>
-          <a href='#'>Skillset</a>
+          <button>Skillset</button>
+          <DesktopDropdown show />
         </li>
       </ul>
     </nav>

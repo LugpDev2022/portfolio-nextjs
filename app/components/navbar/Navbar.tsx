@@ -5,6 +5,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import navbarStyles from './navbar.module.css';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import DesktopDropdown from './DesktopDropdown';
+import MobileDropdown from './MobileDropdown';
 
 //TODO: Animate the dropdown icon
 const Navbar = () => {
@@ -60,7 +61,7 @@ const Navbar = () => {
         <li className='flex items-center'>
           <a href='#'>Projects</a>
         </li>
-        <li className='flex items-center'>
+        <li className='flex flex-col justify-center'>
           <span
             id='skillsetDropdownButton'
             className='flex items-center hover:cursor-pointer'
@@ -72,7 +73,11 @@ const Navbar = () => {
               className={showDropdown === true ? 'rotate-180' : 'rotate-0'}
             />
           </span>
+
+          {/* Just shown on desktop view */}
           <DesktopDropdown show={showDropdown} />
+          {/* Just shown on mobile view */}
+          <MobileDropdown show={showDropdown} />
         </li>
       </ul>
     </nav>

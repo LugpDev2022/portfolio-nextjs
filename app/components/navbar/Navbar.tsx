@@ -7,7 +7,17 @@ import DesktopDropdown from './DesktopDropdown';
 import MobileDropdown from './MobileDropdown';
 import { useNavbar } from './useNavbar';
 
+import { Castoro } from 'next/font/google';
+
+const castoro = Castoro({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['italic', 'normal'],
+});
+
 //TODO: Animate the dropdown icon
+//TODO: Add hover effects
+
 const Navbar = () => {
   const {
     showDropdown,
@@ -25,7 +35,10 @@ const Navbar = () => {
           onClick={handleMenuClick}
         />
 
-        <a href='#' className={navbarStyles.navbarBrand}>
+        <a
+          href='#'
+          className={`${castoro.className} ${navbarStyles.navbarBrand}`}
+        >
           {/*<LC />*/}
           &lt;LC /&gt;
         </a>

@@ -2,6 +2,7 @@
   @apply text-3xl;
   @apply font-bold;
   @apply tracking-tight;
+  @apply italic;
 }
 
 .tri {

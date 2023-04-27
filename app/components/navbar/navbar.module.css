@@ -1,0 +1,5 @@
+.navbarBrand {
+  @apply text-2xl;
+  @apply font-bold;
+  @apply tracking-tight;
+}

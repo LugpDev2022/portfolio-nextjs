@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className='justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
       <div className='order-2 flex justify-between'>
         <GiHamburgerMenu
-          size={32}
+          size={38}
           className='block hover:cursor-pointer sm:hidden'
           onClick={handleMenuClick}
         />

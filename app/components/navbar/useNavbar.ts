@@ -13,6 +13,10 @@ export const useNavbar = () => {
 
       setShowDropdown(() => false);
     });
+
+    window.addEventListener('scroll', () => {
+      setShowDropdown(() => false);
+    });
   }, []);
 
   return {

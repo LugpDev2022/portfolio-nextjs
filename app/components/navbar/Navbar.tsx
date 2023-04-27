@@ -1,11 +1,15 @@
 'use client';
 
-// import { useState } from 'react';
+import { useState } from 'react';
 import navbarStyles from './navbar.module.css';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Navbar = () => {
-  // const [dropdownActive, setDropdownActive] = useState<boolean>(false);
+  const [showMobileNavbar, setshowMobileNavbar] = useState<boolean>(false);
+
+  const handleMenuClick = () => {
+    setshowMobileNavbar(!showMobileNavbar);
+  };
 
   return (
     <nav className='justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
@@ -13,6 +17,7 @@ const Navbar = () => {
         <GiHamburgerMenu
           size={32}
           className='block hover:cursor-pointer sm:hidden'
+          onClick={handleMenuClick}
         />
 
         <span className={navbarStyles.navbarBrand}>
@@ -21,21 +26,24 @@ const Navbar = () => {
         </span>
       </div>
 
-      <hr className='my-3 block sm:hidden' />
+      <hr
+        className={`my-3 ${showMobileNavbar ? 'block' : 'hidden'}  sm:hidden`}
+      />
 
       <ul
-        className='
+        className={`
           order-1 
-          flex 
+          ${showMobileNavbar ? 'flex' : 'hidden'} 
           flex-col
           flex-wrap 
           gap-2 
           text-xl 
           font-semibold
           tracking-wide
+          sm:flex
           sm:flex-row
           sm:gap-7
-        '
+        `}
       >
         <li className='flex items-center'>
           <a href='#'>Languages</a>

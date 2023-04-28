@@ -1,5 +1,6 @@
 import LanguageBar from '@/app/components/LanguageBar';
 import Subtitle from '@/app/components/Subtitle';
+import SectionContainer from '../components/SectionContainer';
 
 type LanguageObject = {
   language: string;
@@ -13,7 +14,7 @@ const languagesArray: LanguageObject[] = [
 ];
 
 const Languages = () => (
-  <div className='sm:py-15 bg-[#0F2434] px-10 py-10'>
+  <SectionContainer className='bg-[#0F2434]'>
     <Subtitle>Languages</Subtitle>
     <div className='mx-auto mt-6 max-w-xl'>
       {languagesArray.map(({ language, percentage }) => (
@@ -24,7 +25,7 @@ const Languages = () => (
         />
       ))}
     </div>
-  </div>
+  </SectionContainer>
 );
 
 export default Languages;

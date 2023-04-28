@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { getLanguageLevel } from '../helpers/getLanguageLevel';
 
 interface Props {
   language: string;
@@ -6,11 +7,11 @@ interface Props {
 }
 
 const LanguageBar: React.FC<Props> = ({ language, percentage }) => {
-  const level = useMemo(() => 'Bajo', []);
+  const level = useMemo(() => getLanguageLevel(percentage), [percentage]);
 
   return (
     <div className='my-4 block w-full text-white sm:my-6 sm:flex'>
-      <span className='me-5 block basis-[70px] text-left font-semibold tracking-wide sm:text-right'>
+      <span className='me-5 block basis-[80px] text-left text-lg font-semibold tracking-wide sm:text-right'>
         {language}
       </span>
 
@@ -19,7 +20,7 @@ const LanguageBar: React.FC<Props> = ({ language, percentage }) => {
           className='me-2 h-[25px] bg-[#255880]'
           style={{ width: `${percentage}%` }}
         ></div>
-        <span className='hidden sm:inline'>{level}</span>
+        <span className='hidden text-lg sm:inline'>{level}</span>
       </div>
     </div>
   );

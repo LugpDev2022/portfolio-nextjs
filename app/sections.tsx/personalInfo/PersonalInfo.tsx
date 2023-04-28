@@ -4,6 +4,7 @@ import photo from '../../assets/profile.jpg';
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { SiFiverr } from 'react-icons/si';
 
+//TODO: Find better logos
 const PersonalInfo = () => {
   return (
     <div className='sm:py-15 flex flex-col gap-10  bg-[#255880] px-10 py-10 sm:grid sm:grid-cols-2'>

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import photo from '../../assets/profile.jpg';
+import photo from '../assets/profile.jpg';
 
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { SiFiverr } from 'react-icons/si';

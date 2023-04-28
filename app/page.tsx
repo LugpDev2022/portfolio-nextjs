@@ -1,6 +1,6 @@
-import Languages from './sections.tsx/languages/Languages';
+import Languages from './sections/Languages';
 import Navbar from './components/navbar/Navbar';
-import PersonalInfo from './sections.tsx/personalInfo/PersonalInfo';
+import PersonalInfo from './sections/PersonalInfo';
 
 const page = () => (
   <>

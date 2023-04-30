@@ -17,6 +17,7 @@ const LanguageBar: React.FC<Props> = ({ language, percentage }) => {
 
       <div className='h-[25px] w-full sm:flex sm:w-10/12'>
         <div
+          data-testid='percentageBar'
           className='me-2 h-[25px] bg-[#255880]'
           style={{ width: `${percentage}%` }}
         ></div>

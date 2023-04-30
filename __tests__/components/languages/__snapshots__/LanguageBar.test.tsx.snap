@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tests on <LanguageBar /> should match snapshot 1`] = `
+<div>
+  <div
+    class="my-4 block w-full text-white sm:my-6 sm:flex"
+  >
+    <span
+      class="me-5 block basis-[80px] text-left text-lg font-semibold tracking-wide sm:text-right"
+    >
+      Japanese
+    </span>
+    <div
+      class="h-[25px] w-full sm:flex sm:w-10/12"
+    >
+      <div
+        class="me-2 h-[25px] bg-[#255880]"
+        data-testid="percentageBar"
+        style="width: 10%;"
+      />
+      <span
+        class="hidden text-lg sm:inline"
+      >
+        Beginner
+      </span>
+    </div>
+  </div>
+</div>
+`;

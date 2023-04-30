@@ -1,18 +1,16 @@
-type Level =
-  | 'Beginner'
-  | 'Medium'
-  | 'Advanced'
-  | 'Native'
-  | 'Error: Your percentage is bigger than 100';
+export const languageLevels = Object.freeze({
+  error: 'Your percentage must be lower or equal to 100',
+  beginner: 'Beginner',
+  medium: 'Medium',
+  advanced: 'Advanced',
+  native: 'Native',
+});
 
-export const getLanguageLevel = (percentage: number): Level => {
-  if (percentage > 100) return 'Error: Your percentage is bigger than 100';
+export const getLanguageLevel = (percentage: number): string => {
+  if (percentage > 100) throw new Error(languageLevels.error);
 
-  if (percentage < 25) return 'Beginner';
-
-  if (percentage < 60) return 'Medium';
-
-  if (percentage < 100) return 'Advanced';
-
-  return 'Native';
+  if (percentage === 100) return languageLevels.native;
+  if (percentage > 60) return languageLevels.advanced;
+  if (percentage > 25) return languageLevels.medium;
+  return languageLevels.beginner;
 };

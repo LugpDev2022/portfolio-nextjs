@@ -1,17 +1,7 @@
 import LanguageBar from './LanguageBar';
 import Subtitle from '@/app/components/Subtitle';
 import SectionContainer from '../SectionContainer';
-
-type LanguageObject = {
-  language: string;
-  percentage: number;
-};
-
-const languagesArray: LanguageObject[] = [
-  { language: 'Spanish', percentage: 100 },
-  { language: 'English', percentage: 75 },
-  { language: 'French', percentage: 17 },
-];
+import { languagesArray } from './languagesArray';
 
 const LanguagesSection = () => (
   <SectionContainer className='bg-[#0F2434]'>

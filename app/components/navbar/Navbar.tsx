@@ -15,8 +15,10 @@ const castoro = Castoro({
   style: ['italic', 'normal'],
 });
 
-//TODO: Animate the dropdown icon
+//TODO: Animate the dropdown icon in a better way
+//TODO: Animate the dropdown when it appears
 //TODO: Add hover effects
+//TODO: Add transparency effect
 
 const Navbar = () => {
   const {
@@ -27,7 +29,7 @@ const Navbar = () => {
   } = useNavbar();
 
   return (
-    <nav className='fixed top-0 w-full justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
+    <nav className='fixed top-0 z-10 w-full justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
       <div className='order-2 flex justify-between'>
         <GiHamburgerMenu
           size={38}

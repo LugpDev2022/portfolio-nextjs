@@ -2,12 +2,9 @@ import LanguageBar from '@/app/components/languages/LanguageBar';
 import { render, screen } from '@testing-library/react';
 
 //TODO: Test if the language bar has the given percentage size
+//TODO: Mock the getLanguageLevel function
 
 describe('tests on <LanguageBar />', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-  });
-
   test('should match snapshot', () => {
     const { container } = render(
       <LanguageBar language='Japanese' percentage={10} />

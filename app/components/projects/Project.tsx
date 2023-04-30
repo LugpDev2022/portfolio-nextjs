@@ -2,16 +2,10 @@
 
 import Image, { StaticImageData } from 'next/image';
 import projectStyles from './project.module.css';
-
-interface Props {
-  name: string;
-  image: StaticImageData;
-  description: string;
-  link: string;
-}
+import { ProjectType } from './projectsArray';
 
 //TODO: Add an animation
-const Project: React.FC<Props> = ({ name, image, description, link }) => {
+const Project = ({ name, image, description, link }: ProjectType) => {
   return (
     <a href={link} className={projectStyles.projectContainer}>
       <Image src={image} alt='Project Image' className='rounded-lg' />

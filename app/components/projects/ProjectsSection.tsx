@@ -1,8 +1,8 @@
-import SectionContainer from '../components/SectionContainer';
-import Subtitle from '../components/Subtitle';
-import timeAppImage from '../assets/timeApp.png';
-import Image, { StaticImageData } from 'next/image';
-import Project from '../components/Project';
+import SectionContainer from '../SectionContainer';
+import Subtitle from '../Subtitle';
+import timeAppImage from '../../assets/timeApp.png';
+import { StaticImageData } from 'next/image';
+import Project from './Project';
 
 type Project = {
   name: string;
@@ -43,7 +43,7 @@ const projectsArray: Project[] = [
   },
 ];
 
-const Projects = () => {
+const ProjectsSection = () => {
   return (
     <SectionContainer className='bg-[#255880]'>
       <Subtitle>Projects</Subtitle>
@@ -56,4 +56,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default ProjectsSection;

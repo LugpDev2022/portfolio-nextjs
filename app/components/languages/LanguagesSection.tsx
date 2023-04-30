@@ -1,6 +1,6 @@
-import LanguageBar from '@/app/components/LanguageBar';
+import LanguageBar from './LanguageBar';
 import Subtitle from '@/app/components/Subtitle';
-import SectionContainer from '../components/SectionContainer';
+import SectionContainer from '../SectionContainer';
 
 type LanguageObject = {
   language: string;
@@ -13,7 +13,7 @@ const languagesArray: LanguageObject[] = [
   { language: 'French', percentage: 17 },
 ];
 
-const Languages = () => (
+const LanguagesSection = () => (
   <SectionContainer className='bg-[#0F2434]'>
     <Subtitle>Languages</Subtitle>
     <div className='mx-auto mt-6 max-w-xl'>
@@ -28,4 +28,4 @@ const Languages = () => (
   </SectionContainer>
 );
 
-export default Languages;
+export default LanguagesSection;

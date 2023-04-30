@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { getLanguageLevel } from '../helpers/getLanguageLevel';
+import { getLanguageLevel } from './helpers/getLanguageLevel';
 
 interface Props {
   language: string;

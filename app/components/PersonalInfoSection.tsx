@@ -3,10 +3,10 @@ import photo from '../assets/profile.jpg';
 
 import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { SiFiverr } from 'react-icons/si';
-import SectionContainer from '../components/SectionContainer';
+import SectionContainer from './SectionContainer';
 
 //TODO: Find better logos
-const PersonalInfo = () => {
+const PersonalInfoSection = () => {
   return (
     <SectionContainer className='flex flex-col gap-10 bg-[#255880] sm:grid sm:grid-cols-2'>
       <div className='flex justify-center sm:justify-end'>
@@ -43,4 +43,4 @@ const PersonalInfo = () => {
   );
 };
 
-export default PersonalInfo;
+export default PersonalInfoSection;

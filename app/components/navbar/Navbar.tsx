@@ -20,6 +20,17 @@ const castoro = Castoro({
 //TODO: Add hover effects
 //TODO: Add transparency effect
 
+interface NavlinkProps {
+  children: React.ReactNode;
+  href: string;
+}
+
+const NavLink: React.FC<NavlinkProps> = ({ children, href }) => (
+  <li className='flex items-center duration-200 hover:text-[#4185b9]'>
+    <a href={href}>{children}</a>
+  </li>
+);
+
 const Navbar = () => {
   const {
     showDropdown,
@@ -65,16 +76,13 @@ const Navbar = () => {
           sm:gap-7
         `}
       >
-        <li className='flex items-center'>
-          <a href='#'>Languages</a>
-        </li>
-        <li className='flex items-center'>
-          <a href='#'>Projects</a>
-        </li>
+        <NavLink href='#'>Languages</NavLink>
+        <NavLink href='#'>Projects</NavLink>
+
         <li className='flex flex-col justify-center'>
           <span
             id='skillsetDropdownButton'
-            className='flex items-center hover:cursor-pointer'
+            className='flex items-center duration-200 hover:cursor-pointer hover:text-[#4185b9]'
             onClick={toggleShowDropdown}
           >
             Skillset

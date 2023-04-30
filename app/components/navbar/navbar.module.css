@@ -5,6 +5,11 @@
   @apply italic;
 }
 
+.navbarBrand:hover {
+  color: #4185b9;
+  transition: 200ms;
+}
+
 .tri {
   width: 0;
   height: 0;

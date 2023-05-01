@@ -1,5 +1,5 @@
 import { StaticImageData } from 'next/image';
-import timeAppImage from '../../assets/timeApp.png';
+import timeAppImage from '../../images/timeApp.png';
 
 export type ProjectType = {
   name: string;

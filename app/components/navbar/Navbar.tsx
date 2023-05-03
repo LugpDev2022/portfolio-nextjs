@@ -27,6 +27,7 @@ const Navbar = () => {
     toggleShowDropdown,
     showMobileNavbar,
     handleMenuClick,
+    activeLink,
   } = useNavbar();
 
   return (
@@ -63,13 +64,19 @@ const Navbar = () => {
           sm:gap-7
         `}
       >
-        <NavLink href='#languages'>Languages</NavLink>
-        <NavLink href='#projects'>Projects</NavLink>
+        <NavLink href='#languages' active={activeLink === 'languages'}>
+          Languages
+        </NavLink>
+        <NavLink href='#projects' active={activeLink === 'projects'}>
+          Projects
+        </NavLink>
 
         <li className='flex flex-col justify-center'>
           <span
             id='skillsetDropdownButton'
-            className='flex items-center duration-200 hover:cursor-pointer hover:text-[#4185b9]'
+            className={`flex items-center duration-200 hover:cursor-pointer hover:text-[#4185b9] ${
+              activeLink === 'skillset' ? 'underline' : ''
+            }`}
             onClick={toggleShowDropdown}
           >
             Skillset

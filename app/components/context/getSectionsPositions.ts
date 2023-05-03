@@ -1,4 +1,10 @@
-export const getSectionsPosition = () => {
+type ReturnedValue = {
+  languagesSectionPosition: number;
+  projectsSectionPosition: number;
+  skillsetSectionPosition: number;
+};
+
+export const getSectionsPosition = (): ReturnedValue => {
   const languagesSection = document.getElementById('languages');
   const languagesSectionCords = languagesSection?.getBoundingClientRect();
 
@@ -8,9 +14,21 @@ export const getSectionsPosition = () => {
   const skillsetSection = document.getElementById('skillset');
   const skillsetSectionCords = skillsetSection?.getBoundingClientRect();
 
+  const languagesSectionPosition = languagesSectionCords
+    ? languagesSectionCords.top
+    : 0;
+
+  const projectsSectionPosition = projectsSectionCords
+    ? projectsSectionCords.top
+    : 0;
+
+  const skillsetSectionPosition = skillsetSectionCords
+    ? skillsetSectionCords.top
+    : 0;
+
   return {
-    languagesSectionPosition: languagesSectionCords?.top,
-    projectsSectionPosition: projectsSectionCords?.top,
-    skillsetSectionPosition: skillsetSectionCords?.top,
+    languagesSectionPosition,
+    projectsSectionPosition,
+    skillsetSectionPosition,
   };
 };

@@ -8,14 +8,14 @@ interface Props {
   children: React.ReactNode;
 }
 
-type Positions = {
+type SectionsPosition = {
   languagesSectionPosition: number | undefined;
   projectsSectionPosition: number | undefined;
   skillsetSectionPosition: number | undefined;
 };
 
 const PositionsProvider: React.FC<Props> = ({ children }) => {
-  const [positions, setPositions] = useState<Positions>({
+  const [positions, setPositions] = useState<SectionsPosition>({
     languagesSectionPosition: undefined,
     projectsSectionPosition: undefined,
     skillsetSectionPosition: undefined,
@@ -29,10 +29,8 @@ const PositionsProvider: React.FC<Props> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('load', () => {
-      const positions = getSectionsPosition();
-      setPositions(positions);
-    });
+    const positions = getSectionsPosition();
+    setPositions(positions);
   }, []);
 
   return (

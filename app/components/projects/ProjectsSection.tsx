@@ -12,6 +12,7 @@ const ProjectsSection = () => (
       ))}
     </div>
     <span id='programming-languages'></span>
+    <span id='skillset'></span>
   </SectionContainer>
 );
 

@@ -48,10 +48,7 @@ const Navbar = () => {
           onClick={handleMenuClick}
         />
 
-        <a
-          href='#'
-          className={`${castoro.className} ${navbarStyles.navbarBrand}`}
-        >
+        <a href='#' className={navbarStyles.navbarBrand}>
           {/*<LC />*/}
           &lt;LC /&gt;
         </a>

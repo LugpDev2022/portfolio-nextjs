@@ -39,6 +39,7 @@ const PersonalInfoSection = () => {
           </a>
         </div>
       </div>
+      <span id='languages'></span>
     </SectionContainer>
   );
 };

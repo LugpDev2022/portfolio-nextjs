@@ -12,13 +12,13 @@ const DesktopDropdown: React.FC<Props> = ({ show }) => {
       <div className={navbarStyles.tri}></div>
       <ul className='rounded-lg bg-[#0B1822] p-3 text-base'>
         <li className='mt-[5px] duration-200 hover:text-[#4185b9]'>
-          <a href='#'>Languages</a>
+          <a href='#programming-languages'>Languages</a>
         </li>
         <li className='mt-[5px] duration-200 hover:text-[#4185b9]'>
-          <a href='#'>Frameworks</a>
+          <a href='#frameworks'>Frameworks</a>
         </li>
         <li className='mt-[5px] duration-200 hover:text-[#4185b9]'>
-          <a href='#'>Other tools</a>
+          <a href='#tools'>Other tools</a>
         </li>
       </ul>
     </div>

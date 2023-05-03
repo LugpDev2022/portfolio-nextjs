@@ -10,13 +10,13 @@ const MobileDropdown: React.FC<Props> = ({ show }) => {
       } float-left mb-2 mt-1 flex w-full flex-col gap-2 rounded-lg bg-[#255880] py-2 pl-8 text-base sm:hidden`}
     >
       <li>
-        <a href='#'>Languages</a>
+        <a href='#programming-languages'>Languages</a>
       </li>
       <li>
-        <a href='#'>Frameworks</a>
+        <a href='#frameworks'>Frameworks</a>
       </li>
       <li>
-        <a href='#'>Other tools</a>
+        <a href='#tools'>Other tools</a>
       </li>
     </ul>
   );

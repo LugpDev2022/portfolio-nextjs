@@ -29,6 +29,7 @@ const SkillsetSection = () => (
           className={skillsetStyles.jsLogo}
         />
       </div>
+      <span id='frameworks'></span>
     </section>
     <section className='overflow-hidden bg-[#255880] py-10'>
       <Subtitle>Frameworks/Libraries</Subtitle>

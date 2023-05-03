@@ -8,6 +8,7 @@ import MobileDropdown from './MobileDropdown';
 import { useNavbar } from './useNavbar';
 
 import { Castoro } from 'next/font/google';
+import NavLink from './NavLink';
 
 const castoro = Castoro({
   subsets: ['latin'],
@@ -19,17 +20,6 @@ const castoro = Castoro({
 //TODO: Animate the dropdown when it appears
 //TODO: Add hover effects
 //TODO: Add transparency effect
-
-interface NavlinkProps {
-  children: React.ReactNode;
-  href: string;
-}
-
-const NavLink: React.FC<NavlinkProps> = ({ children, href }) => (
-  <li className='flex items-center duration-200 hover:text-[#4185b9]'>
-    <a href={href}>{children}</a>
-  </li>
-);
 
 const Navbar = () => {
   const {
@@ -73,8 +63,8 @@ const Navbar = () => {
           sm:gap-7
         `}
       >
-        <NavLink href='#'>Languages</NavLink>
-        <NavLink href='#'>Projects</NavLink>
+        <NavLink href='#languages'>Languages</NavLink>
+        <NavLink href='#projects'>Projects</NavLink>
 
         <li className='flex flex-col justify-center'>
           <span

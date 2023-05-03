@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests on <LanguageSection /> should match snapshot 1`] = `
+<div>
+  <section
+    class="sm:py-15 px-10 py-10 bg-[#0F2434]"
+  >
+    <h3
+      class="text-center text-2xl font-bold tracking-wide text-white"
+    >
+      Languages
+    </h3>
+    <div
+      class="mx-auto mt-6 max-w-xl"
+    >
+      <div
+        class="my-4 block w-full text-white sm:my-6 sm:flex"
+      >
+        <span
+          class="me-5 block basis-[80px] text-left text-lg font-semibold tracking-wide sm:text-right"
+        >
+          Spanish
+        </span>
+        <div
+          class="h-[25px] w-full sm:flex sm:w-10/12"
+        >
+          <div
+            class="me-2 h-[25px] bg-[#255880]"
+            data-testid="percentageBar"
+            style="width: 100%;"
+          />
+          <span
+            class="hidden text-lg sm:inline"
+          >
+            Native
+          </span>
+        </div>
+      </div>
+      <div
+        class="my-4 block w-full text-white sm:my-6 sm:flex"
+      >
+        <span
+          class="me-5 block basis-[80px] text-left text-lg font-semibold tracking-wide sm:text-right"
+        >
+          English
+        </span>
+        <div
+          class="h-[25px] w-full sm:flex sm:w-10/12"
+        >
+          <div
+            class="me-2 h-[25px] bg-[#255880]"
+            data-testid="percentageBar"
+            style="width: 75%;"
+          />
+          <span
+            class="hidden text-lg sm:inline"
+          >
+            Advanced
+          </span>
+        </div>
+      </div>
+      <div
+        class="my-4 block w-full text-white sm:my-6 sm:flex"
+      >
+        <span
+          class="me-5 block basis-[80px] text-left text-lg font-semibold tracking-wide sm:text-right"
+        >
+          French
+        </span>
+        <div
+          class="h-[25px] w-full sm:flex sm:w-10/12"
+        >
+          <div
+            class="me-2 h-[25px] bg-[#255880]"
+            data-testid="percentageBar"
+            style="width: 17%;"
+          />
+          <span
+            class="hidden text-lg sm:inline"
+          >
+            Beginner
+          </span>
+        </div>
+      </div>
+    </div>
+    <span
+      id="projects"
+    />
+  </section>
+</div>
+`;

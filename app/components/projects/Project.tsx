@@ -4,6 +4,7 @@ import Image from 'next/image';
 import projectStyles from './project.module.css';
 import { ProjectType } from './projectsArray';
 import { useState } from 'react';
+import ProjectModal from './ProjectModal';
 
 const Project = ({ name, image, description, link }: ProjectType) => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -24,7 +25,13 @@ const Project = ({ name, image, description, link }: ProjectType) => {
         </div>
       </article>
 
-      {showModal && <div>fasdfasdf pkfjasjdf oasdfasd</div>}
+      {showModal && (
+        <ProjectModal
+          title={name}
+          closeFunction={() => setShowModal(false)}
+          image={image}
+        />
+      )}
     </>
   );
 };

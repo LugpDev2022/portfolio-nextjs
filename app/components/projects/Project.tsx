@@ -1,22 +1,31 @@
 'use client';
 
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import projectStyles from './project.module.css';
 import { ProjectType } from './projectsArray';
+import { useState } from 'react';
 
-//TODO: Add an animation
 const Project = ({ name, image, description, link }: ProjectType) => {
-  return (
-    <a href={link} className={projectStyles.projectContainer}>
-      <Image src={image} alt='Project Image' className='rounded-lg' />
+  const [showModal, setShowModal] = useState<boolean>(false);
 
-      <div className={projectStyles.projectDescription}>
-        <span className='text-lg font-semibold uppercase tracking-wide md:text-xl'>
-          {name}
-        </span>
-        <p className='hidden text-lg md:block'>{description}</p>
-      </div>
-    </a>
+  return (
+    <>
+      <article
+        className={projectStyles.projectContainer}
+        onClick={() => setShowModal(true)}
+      >
+        <Image src={image} alt='Project Image' className='rounded-lg' />
+
+        <div className={projectStyles.projectDescription}>
+          <span className='text-lg font-semibold uppercase tracking-wide md:text-xl'>
+            {name}
+          </span>
+          <p className='hidden text-lg md:block'>{description}</p>
+        </div>
+      </article>
+
+      {showModal && <div>fasdfasdf pkfjasjdf oasdfasd</div>}
+    </>
   );
 };
 

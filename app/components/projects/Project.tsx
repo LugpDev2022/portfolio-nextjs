@@ -6,7 +6,6 @@ import projectStyles from './project.module.css';
 import { ProjectType } from './projectsArray';
 import ProjectModal from './ProjectModal';
 
-//TODO: Add animation when mouse leaves
 const Project = ({ name, image, description, techStack }: ProjectType) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [closingModal, setClosingModal] = useState<boolean>(false);

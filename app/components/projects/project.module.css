@@ -13,6 +13,7 @@
 }
 .projectDescription {
   align-items: center;
+  animation: hideProjectDescAnimation 150ms linear;
   background-color: black;
   border-radius: 0.5rem;
   color: white;
@@ -65,11 +66,20 @@
 }
 
 @keyframes showProjectDescAnimation {
-  0% {
+  from {
     opacity: 0;
   }
-  100% {
+  to {
     opacity: 0.8;
+  }
+}
+
+@keyframes hideProjectDescAnimation {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
   }
 }
 

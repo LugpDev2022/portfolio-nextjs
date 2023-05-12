@@ -1,55 +1,52 @@
+//TODO: Optimize the images
+//TODO: Write all the descriptions
+
 import { StaticImageData } from 'next/image';
-import timeAppImage from '../../images/timeApp.png';
+import timeAppImage from '../../images/projects/timeApp.png';
+import adviceAppImage from '../../images/projects/adviceApp.png';
+import todoAppImage from '../../images/projects/todoApp.png';
 
 export type ProjectType = {
   name: string;
   image: StaticImageData;
   description: string;
-  link: string;
+  links: {
+    url: string;
+    githubLink: string;
+  };
   techStack: string[];
 };
 
 export const projectsArray: ProjectType[] = [
   {
-    name: 'xd1',
+    name: 'Time App',
     image: timeAppImage,
-    description: 'Project example',
-    link: '/',
-    techStack: [''],
+    description:
+      'Small app for basic time tasks like watch the hour and create timers.',
+    techStack: ['React', 'Redux', 'Jest', 'Bootstrap'],
+    links: {
+      url: 'https://time-app-lugpdev2022.netlify.app/',
+      githubLink: 'https://github.com/LugpDev2022/time-app',
+    },
   },
   {
-    name: 'xd2',
-    image: timeAppImage,
-    description: 'Project example',
-    link: '/',
-    techStack: [''],
+    name: 'Advice App',
+    image: adviceAppImage,
+    description: '',
+    techStack: ['React', 'Bootstrap', 'Sass'],
+    links: {
+      url: 'https://advice-generator-lugpdev2022.netlify.app/',
+      githubLink: 'https://github.com/LugpDev2022/advice-generator',
+    },
   },
   {
-    name: 'xd3',
-    image: timeAppImage,
-    description: 'Project example',
-    link: '/',
-    techStack: [''],
-  },
-  {
-    name: 'xd4',
-    image: timeAppImage,
-    description: 'Project example',
-    link: '/',
-    techStack: [''],
-  },
-  {
-    name: 'xd5',
-    image: timeAppImage,
-    description: 'Project example',
-    link: '/',
-    techStack: [''],
-  },
-  {
-    name: 'xd6',
-    image: timeAppImage,
-    description: 'Project example',
-    link: '/',
-    techStack: [''],
+    name: 'Todo App',
+    image: todoAppImage,
+    description: '',
+    techStack: ['React', 'Bootstrap', 'Jest'],
+    links: {
+      url: 'https://lugp-todo-app.netlify.app/',
+      githubLink: 'https://github.com/LugpDev2022/todo-app',
+    },
   },
 ];

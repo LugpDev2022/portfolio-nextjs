@@ -6,6 +6,7 @@ import projectStyles from './project.module.css';
 import { ProjectType } from './projectsArray';
 import ProjectModal from './ProjectModal';
 
+//TODO: Add animation when mouse leaves
 const Project = ({ name, image, description, techStack }: ProjectType) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [closingModal, setClosingModal] = useState<boolean>(false);
@@ -30,7 +31,7 @@ const Project = ({ name, image, description, techStack }: ProjectType) => {
           <span className='text-lg font-semibold uppercase tracking-wide md:text-xl'>
             {name}
           </span>
-          <p className='hidden text-lg md:block'>{description}</p>
+          <p className='hidden text-center text-lg md:block'>{description}</p>
         </div>
       </article>
 

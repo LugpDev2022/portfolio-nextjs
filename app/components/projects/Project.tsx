@@ -1,14 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import projectStyles from './project.module.css';
 import { ProjectType } from './projectsArray';
-import { useState } from 'react';
 import ProjectModal from './ProjectModal';
 
-const Project = ({ name, image, description, link }: ProjectType) => {
+const Project = ({ name, image, description, techStack }: ProjectType) => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [closingModal, setClosingModal] = useState(false);
+  const [closingModal, setClosingModal] = useState<boolean>(false);
 
   const handleClose = () => {
     setClosingModal(true);
@@ -40,6 +40,7 @@ const Project = ({ name, image, description, link }: ProjectType) => {
           closeFunction={handleClose}
           image={image}
           closing={closingModal}
+          techStack={techStack}
         />
       )}
     </>

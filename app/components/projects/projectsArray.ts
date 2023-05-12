@@ -6,6 +6,7 @@ export type ProjectType = {
   image: StaticImageData;
   description: string;
   link: string;
+  techStack: string[];
 };
 
 export const projectsArray: ProjectType[] = [
@@ -14,35 +15,41 @@ export const projectsArray: ProjectType[] = [
     image: timeAppImage,
     description: 'Project example',
     link: '/',
+    techStack: [''],
   },
   {
     name: 'xd2',
     image: timeAppImage,
     description: 'Project example',
     link: '/',
+    techStack: [''],
   },
   {
     name: 'xd3',
     image: timeAppImage,
     description: 'Project example',
     link: '/',
+    techStack: [''],
   },
   {
     name: 'xd4',
     image: timeAppImage,
     description: 'Project example',
     link: '/',
+    techStack: [''],
   },
   {
     name: 'xd5',
     image: timeAppImage,
     description: 'Project example',
     link: '/',
+    techStack: [''],
   },
   {
     name: 'xd6',
     image: timeAppImage,
     description: 'Project example',
     link: '/',
+    techStack: [''],
   },
 ];

@@ -7,7 +7,7 @@ interface Props {
   title: string;
   closeFunction: () => void;
   image: StaticImageData;
-  // techStack: string[];
+  techStack: string[];
   closing?: boolean;
 }
 
@@ -15,7 +15,7 @@ const ProjectModal: React.FC<Props> = ({
   title,
   closeFunction,
   image,
-  // techStack,
+  techStack,
   closing = false,
 }) => {
   useModalEffects(closeFunction);
@@ -45,12 +45,9 @@ const ProjectModal: React.FC<Props> = ({
         />
         <h4 className='text-xl font-medium'>Tech Stack</h4>
         <ul>
-          <li>xd</li>
-          <li>xd</li>
-          <li>xd</li>
-          <li>xd</li>
-          <li>xd</li>
-          <li>xd</li>
+          {techStack.map((technology) => (
+            <li key={technology}>{technology}</li>
+          ))}
         </ul>
       </div>
     </div>

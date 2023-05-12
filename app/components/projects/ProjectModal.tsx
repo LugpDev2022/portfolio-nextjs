@@ -36,23 +36,8 @@ const ProjectModal: React.FC<Props> = ({
   }, []);
 
   return (
-    <div
-      className='
-        fixed
-        top-0 
-        z-50 
-        flex 
-        h-full 
-        w-full 
-        flex-col 
-        justify-center 
-        overflow-hidden 
-        bg-black/70
-        px-3
-        backdrop-opacity-10
-      '
-    >
-      <div className={projectStyles.modalContainer}>
+    <div className={projectStyles.modalBackground}>
+      <div className={projectStyles.modalContent}>
         <div className='flex items-center justify-between bg-[#017acc]'>
           <h3 className='text-2xl font-semibold'>{title}</h3>
           <AiOutlineClose

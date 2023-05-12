@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import projectStyles from './project.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
+import { useModalEffects } from './useModalEffects';
 
 interface Props {
   title: string;
@@ -18,24 +18,7 @@ const ProjectModal: React.FC<Props> = ({
   // techStack,
   closing = false,
 }) => {
-  useEffect(() => {
-    const handler = ({ key }: KeyboardEvent) => {
-      if (key !== 'Escape') return;
-      closeFunction();
-    };
-
-    window.addEventListener('keydown', handler);
-
-    return () => window.removeEventListener('keydown', handler);
-  }, [closeFunction]);
-
-  useEffect(() => {
-    document.body.classList.add('no-scroll');
-
-    return () => {
-      document.body.classList.remove('no-scroll');
-    };
-  }, []);
+  useModalEffects(closeFunction);
 
   return (
     <div className={projectStyles.modalBackground}>

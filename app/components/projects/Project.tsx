@@ -8,6 +8,15 @@ import ProjectModal from './ProjectModal';
 
 const Project = ({ name, image, description, link }: ProjectType) => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [closingModal, setClosingModal] = useState(false);
+
+  const handleClose = () => {
+    setClosingModal(true);
+    setTimeout(() => {
+      setClosingModal(false);
+      setShowModal(false);
+    }, 150);
+  };
 
   return (
     <>
@@ -28,8 +37,9 @@ const Project = ({ name, image, description, link }: ProjectType) => {
       {showModal && (
         <ProjectModal
           title={name}
-          closeFunction={() => setShowModal(false)}
+          closeFunction={handleClose}
           image={image}
+          closing={closingModal}
         />
       )}
     </>

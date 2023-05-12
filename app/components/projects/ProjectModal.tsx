@@ -8,6 +8,7 @@ interface Props {
   closeFunction: () => void;
   image: StaticImageData;
   // techStack: string[];
+  closing?: boolean;
 }
 
 const ProjectModal: React.FC<Props> = ({
@@ -15,6 +16,7 @@ const ProjectModal: React.FC<Props> = ({
   closeFunction,
   image,
   // techStack,
+  closing = false,
 }) => {
   useEffect(() => {
     const handler = ({ key }: KeyboardEvent) => {
@@ -37,7 +39,13 @@ const ProjectModal: React.FC<Props> = ({
 
   return (
     <div className={projectStyles.modalBackground}>
-      <div className={projectStyles.modalContent}>
+      <div
+        className={
+          projectStyles.modalContent +
+          ' ' +
+          (closing ? projectStyles.hideModal : '')
+        }
+      >
         <div className='flex items-center justify-between bg-[#017acc]'>
           <h3 className='text-2xl font-semibold'>{title}</h3>
           <AiOutlineClose

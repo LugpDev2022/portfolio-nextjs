@@ -53,6 +53,10 @@
   width: 100%;
 }
 
+.hideModal {
+  animation: hideModalAnimation 150ms linear;
+}
+
 @media (min-width: 640px) {
   .projectContainer {
     flex-basis: 45%;

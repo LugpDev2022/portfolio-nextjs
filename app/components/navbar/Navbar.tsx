@@ -7,14 +7,7 @@ import DesktopDropdown from './DesktopDropdown';
 import MobileDropdown from './MobileDropdown';
 import { useNavbar } from './useNavbar';
 
-import { Castoro } from 'next/font/google';
 import NavLink from './NavLink';
-
-const castoro = Castoro({
-  subsets: ['latin'],
-  weight: ['400'],
-  style: ['italic', 'normal'],
-});
 
 //TODO: Animate the dropdown icon in a better way
 //TODO: Animate the dropdown when it appears

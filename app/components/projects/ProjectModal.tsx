@@ -1,17 +1,23 @@
-import Image, { StaticImageData } from 'next/image';
 import { useEffect } from 'react';
+import Image, { StaticImageData } from 'next/image';
+import projectStyles from './project.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
 
 interface Props {
   title: string;
   closeFunction: () => void;
   image: StaticImageData;
+  // techStack: string[];
 }
 
-//TODO: Disable scrolling
-const ProjectModal: React.FC<Props> = ({ title, closeFunction, image }) => {
+const ProjectModal: React.FC<Props> = ({
+  title,
+  closeFunction,
+  image,
+  // techStack,
+}) => {
   useEffect(() => {
-    const handler = ({ key }: { key: string }) => {
+    const handler = ({ key }: KeyboardEvent) => {
       if (key !== 'Escape') return;
       closeFunction();
     };
@@ -20,6 +26,14 @@ const ProjectModal: React.FC<Props> = ({ title, closeFunction, image }) => {
 
     return () => window.removeEventListener('keydown', handler);
   }, [closeFunction]);
+
+  useEffect(() => {
+    document.body.classList.add('no-scroll');
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, []);
 
   return (
     <div
@@ -32,31 +46,36 @@ const ProjectModal: React.FC<Props> = ({ title, closeFunction, image }) => {
         w-full 
         flex-col 
         justify-center 
-        bg-black/70 
-        px-7
+        overflow-hidden 
+        bg-black/70
+        px-3
         backdrop-opacity-10
       '
     >
-      <div className='mx-auto max-h-[75vh] w-full max-w-[700px] overflow-y-scroll rounded-md bg-[#017acc] px-5 py-2 text-white'>
-        <div className='flex justify-between'>
-          <h3 className='text-2xl'>{title}</h3>
+      <div className={projectStyles.modalContainer}>
+        <div className='flex items-center justify-between bg-[#017acc]'>
+          <h3 className='text-2xl font-semibold'>{title}</h3>
           <AiOutlineClose
             onClick={closeFunction}
-            size={30}
+            size={27}
             className='hover:cursor-pointer'
           />
         </div>
 
-        <Image src={image} alt='Project Screenshot' className='rounded-lg' />
-        <div>
-          <h4>Tech Stack</h4>
-          <ul>
-            <li>xd</li>
-            <li>xd</li>
-            <li>xd</li>
-            <li>xd</li>
-          </ul>
-        </div>
+        <Image
+          src={image}
+          alt='Project Screenshot'
+          className='my-3 rounded-lg'
+        />
+        <h4 className='text-xl font-medium'>Tech Stack</h4>
+        <ul>
+          <li>xd</li>
+          <li>xd</li>
+          <li>xd</li>
+          <li>xd</li>
+          <li>xd</li>
+          <li>xd</li>
+        </ul>
       </div>
     </div>
   );

@@ -13,3 +13,7 @@
     height: 55px;
   }
 }
+
+.no-scroll {
+  overflow: hidden;
+}

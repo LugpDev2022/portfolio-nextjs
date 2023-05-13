@@ -23,13 +23,11 @@ const ProjectModal: React.FC<Props> = ({
   return (
     <div className={projectStyles.modalBackground}>
       <div
-        className={
-          projectStyles.modalContent +
-          ' ' +
-          (closing ? projectStyles.hideModal : '')
-        }
+        className={`${projectStyles.modalContent} ${
+          closing ? projectStyles.hideModal : ''
+        }`}
       >
-        <div className='flex items-center justify-between bg-[#017acc]'>
+        <div className='absolute flex w-full items-center justify-between bg-[#255880] px-4 py-2'>
           <h3 className='text-2xl font-semibold'>{title}</h3>
           <AiOutlineClose
             onClick={closeFunction}
@@ -38,17 +36,19 @@ const ProjectModal: React.FC<Props> = ({
           />
         </div>
 
-        <Image
-          src={image}
-          alt='Project Screenshot'
-          className='my-3 rounded-lg'
-        />
-        <h4 className='text-xl font-medium'>Tech Stack</h4>
-        <ul>
-          {techStack.map((technology) => (
-            <li key={technology}>{technology}</li>
-          ))}
-        </ul>
+        <div className='h-full overflow-y-scroll px-5 pb-4 pt-[48px]'>
+          <Image
+            src={image}
+            alt='Project Screenshot'
+            className='mb-3 rounded-sm'
+          />
+          <h4 className='text-xl font-medium'>Tech Stack</h4>
+          <ul>
+            {techStack.map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,13 @@ import projectStyles from './project.module.css';
 import { ProjectType } from './projectsArray';
 import ProjectModal from './ProjectModal';
 
-const Project = ({ name, image, description, techStack }: ProjectType) => {
+const Project = ({
+  name,
+  image,
+  description,
+  techStack,
+  links,
+}: ProjectType) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [closingModal, setClosingModal] = useState<boolean>(false);
 
@@ -41,6 +47,8 @@ const Project = ({ name, image, description, techStack }: ProjectType) => {
           image={image}
           closing={closingModal}
           techStack={techStack}
+          url={links.url}
+          githubLink={links.githubLink}
         />
       )}
     </>

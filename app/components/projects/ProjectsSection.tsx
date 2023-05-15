@@ -11,8 +11,6 @@ const ProjectsSection = () => (
         <Project key={project.name} {...project} />
       ))}
     </div>
-    <span id='programming-languages'></span>
-    <span id='skillset'></span>
   </SectionContainer>
 );
 

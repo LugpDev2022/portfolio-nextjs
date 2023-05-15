@@ -15,7 +15,6 @@ const LanguagesSection = () => (
         />
       ))}
     </div>
-    <span id='projects'></span>
   </SectionContainer>
 );
 

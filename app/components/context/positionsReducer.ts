@@ -1,5 +1,3 @@
-import { Section } from './types';
-
 type Action = {
   type: 'UPDATE REFERENCE' | 'UPDATE POSITION';
   payload: any;

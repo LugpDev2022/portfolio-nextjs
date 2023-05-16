@@ -14,10 +14,9 @@ const initialState: State = {
   positions: {
     languagesSectionPosition: undefined,
     projectsSectionPosition: undefined,
-    skillsetSectionPosition: undefined,
-    programmingLanguagesPosition: undefined,
-    frameworksPosition: undefined,
-    toolsPosition: undefined,
+    programmingLanguagesSectionPosition: undefined,
+    frameworksSectionPosition: undefined,
+    toolsSectionPosition: undefined,
   },
   refs: {
     languagesRef: undefined,

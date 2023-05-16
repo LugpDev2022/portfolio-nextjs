@@ -5,10 +5,9 @@ export interface State {
   positions: {
     languagesSectionPosition: SectionPosition;
     projectsSectionPosition: SectionPosition;
-    skillsetSectionPosition: SectionPosition;
-    programmingLanguagesPosition: SectionPosition;
-    frameworksPosition: SectionPosition;
-    toolsPosition: SectionPosition;
+    programmingLanguagesSectionPosition: SectionPosition;
+    frameworksSectionPosition: SectionPosition;
+    toolsSectionPosition: SectionPosition;
   };
   refs: {
     languagesRef: SectionRef;

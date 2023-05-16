@@ -7,10 +7,15 @@ import { languageLogos } from './logos';
 import skillsetStyles from './skillset.module.css';
 
 import javascriptLogo from '../../images/logos/js.png';
+import SectionContainer from '../SectionContainer';
 
 const SkillsetSection = () => (
   <>
-    <section className='flex flex-col items-center gap-16 overflow-hidden bg-[#0F2434] pb-12 pt-10'>
+    <SectionContainer
+      section='programmingLanguages'
+      disableDefaultStyles
+      className='flex flex-col items-center gap-16 overflow-hidden bg-[#0F2434] pb-12 pt-10'
+    >
       <Subtitle>Programming/Markup Languages</Subtitle>
       <div className='relative'>
         <div className={skillsetStyles.logosContainer}>
@@ -29,11 +34,15 @@ const SkillsetSection = () => (
           className={skillsetStyles.jsLogo}
         />
       </div>
-    </section>
-    <section className='overflow-hidden bg-[#255880] py-10'>
+    </SectionContainer>
+    <SectionContainer
+      disableDefaultStyles
+      section='frameworks'
+      className='overflow-hidden bg-[#255880] py-10'
+    >
       <Subtitle>Frameworks/Libraries</Subtitle>
       <Banner />
-    </section>
+    </SectionContainer>
   </>
 );
 

@@ -8,22 +8,32 @@ interface Props {
   section: Section;
   children: React.ReactNode;
   className?: string;
+  disableDefaultStyles?: boolean;
 }
 
 const SectionContainer: React.FC<Props> = ({
   children,
   className = '',
   section,
+  disableDefaultStyles = false,
 }) => {
   const { setSectionRef } = useContext<any>(PositionsContext);
   const ref = useRef(null);
 
   useEffect(() => {
     setSectionRef(section, ref);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <section className={`sm:py-15 px-7 py-10 lg:px-10 ${className}`} ref={ref}>
+    <section
+      className={
+        disableDefaultStyles
+          ? className
+          : `sm:py-15 px-7 py-10 lg:px-10 ${className}`
+      }
+      ref={ref}
+    >
       {children}
     </section>
   );

@@ -4,7 +4,7 @@ import SectionContainer from '../SectionContainer';
 import { languagesArray } from './languagesArray';
 
 const LanguagesSection = () => (
-  <SectionContainer className='bg-[#0F2434]'>
+  <SectionContainer className='bg-[#0F2434]' section='languages'>
     <Subtitle>Languages</Subtitle>
     <div className='mx-auto mt-6 max-w-xl'>
       {languagesArray.map(({ language, percentage }) => (

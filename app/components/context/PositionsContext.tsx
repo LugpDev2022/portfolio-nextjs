@@ -1,13 +1,4 @@
 import { createContext } from 'react';
+import { ContextValues } from './types';
 
-type ContextValues = {
-  languagesSectionPosition: number | undefined;
-  projectsSectionPosition: number | undefined;
-  skillsetSectionPosition: number | undefined;
-};
-
-export const PositionsContext = createContext<ContextValues>({
-  languagesSectionPosition: undefined,
-  projectsSectionPosition: undefined,
-  skillsetSectionPosition: undefined,
-});
+export const PositionsContext = createContext<ContextValues | null>(null);

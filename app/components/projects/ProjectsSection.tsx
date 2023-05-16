@@ -4,7 +4,7 @@ import Project from './Project';
 import { projectsArray } from './projectsArray';
 
 const ProjectsSection = () => (
-  <SectionContainer className='bg-[#255880]'>
+  <SectionContainer className='bg-[#255880]' section='projects'>
     <Subtitle>Projects</Subtitle>
     <div className='mt-10 flex flex-wrap justify-evenly gap-7'>
       {projectsArray.map((project) => (

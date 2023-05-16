@@ -1,42 +1,45 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 import { PositionsContext } from './PositionsContext';
 import { getSectionsPosition } from './getSectionsPositions';
+import { positionsReducer } from './positionsReducer';
+import { Section, State } from './types';
 
 interface Props {
   children: React.ReactNode;
 }
 
-type SectionsPosition = {
-  languagesSectionPosition: number | undefined;
-  projectsSectionPosition: number | undefined;
-  skillsetSectionPosition: number | undefined;
-};
-
-const PositionsProvider: React.FC<Props> = ({ children }) => {
-  const [positions, setPositions] = useState<SectionsPosition>({
+const initialState: State = {
+  positions: {
     languagesSectionPosition: undefined,
     projectsSectionPosition: undefined,
     skillsetSectionPosition: undefined,
-  });
+    programmingLanguagesPosition: undefined,
+    frameworksPosition: undefined,
+    toolsPosition: undefined,
+  },
+  refs: {
+    languagesRef: undefined,
+    projectsRef: undefined,
+    programmingLanguagesRef: undefined,
+    frameworksRef: undefined,
+    toolsRef: undefined,
+  },
+};
 
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      const positions = getSectionsPosition();
-      setPositions(positions);
-    });
-  }, []);
+const PositionsProvider: React.FC<Props> = ({ children }) => {
+  const [state, dispatch] = useReducer(positionsReducer, initialState);
 
-  useEffect(() => {
-    const positions = getSectionsPosition();
-    setPositions(positions);
-  }, []);
+  const setSectionRef = (section: Section, ref: any) => {
+    dispatch({ type: 'UPDATE REFERENCES', payload: { section, ref } });
+  };
 
   return (
     <PositionsContext.Provider
       value={{
-        ...positions,
+        ...state,
+        setSectionRef,
       }}
     >
       {children}

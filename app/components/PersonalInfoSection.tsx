@@ -8,7 +8,10 @@ import SectionContainer from './SectionContainer';
 //TODO: Find better logos
 const PersonalInfoSection = () => {
   return (
-    <SectionContainer className='flex flex-col gap-10 bg-[#255880] sm:grid sm:grid-cols-2'>
+    <SectionContainer
+      className='flex flex-col gap-10 bg-[#255880] sm:grid sm:grid-cols-2'
+      section='personalInfo'
+    >
       <div className='flex justify-center sm:justify-end'>
         <Image
           src={photo}

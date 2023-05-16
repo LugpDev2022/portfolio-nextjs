@@ -91,9 +91,9 @@ const Navbar = () => {
           </span>
 
           {/* Just shown on desktop view */}
-          <DesktopDropdown show={showDropdown} />
+          <DesktopDropdown show={showDropdown} {...positions} />
           {/* Just shown on mobile view */}
-          <MobileDropdown show={showDropdown} />
+          <MobileDropdown show={showDropdown} {...positions} />
         </li>
       </ul>
     </nav>

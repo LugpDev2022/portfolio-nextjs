@@ -39,6 +39,26 @@ const PositionsProvider: React.FC<Props> = ({ children }) => {
     });
   };
 
+  useEffect(() => {
+    const handler = () => {
+      for (const ref in state.refs) {
+        const section = ref.substring(0, ref.length - 3);
+
+        dispatch({
+          type: 'UPDATE POSITION',
+          payload: {
+            section,
+            distanceToTop: getSectionPosition(state.refs[ref]),
+          },
+        });
+      }
+    };
+
+    window.addEventListener('resize', handler);
+
+    return () => window.removeEventListener('resize', handler);
+  }, [state.refs]);
+
   return (
     <PositionsContext.Provider
       value={{

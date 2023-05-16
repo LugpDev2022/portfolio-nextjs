@@ -32,20 +32,7 @@ const ProjectModal: React.FC<Props> = ({
         }`}
       >
         <div className='absolute flex w-full items-center justify-between bg-[#255880] px-4 py-2'>
-          <div className='flex'>
-            <h3 className='text-2xl font-semibold'>{title}</h3>
-
-            <div className='ms-7  hidden gap-1 sm:flex'>
-              {githubLink && (
-                <a href={githubLink} target='_blank'>
-                  <AiFillGithub size={32} />
-                </a>
-              )}
-              <a href={url} target='_blank'>
-                <AiOutlineLink size={32} />
-              </a>
-            </div>
-          </div>
+          <h3 className='text-2xl font-semibold'>{title}</h3>
 
           <AiOutlineClose
             onClick={closeFunction}
@@ -60,7 +47,8 @@ const ProjectModal: React.FC<Props> = ({
             alt='Project Screenshot'
             className='mb-3 rounded-sm'
           />
-          <h4 className='mb-2 text-xl font-medium'>Tech Stack</h4>
+
+          <h4 className='mb-1 text-xl font-medium'>Tech Stack</h4>
           <ul className='grid grid-cols-2'>
             {techStack.map((technology) => (
               <li
@@ -72,10 +60,21 @@ const ProjectModal: React.FC<Props> = ({
             ))}
           </ul>
 
-          <div className='mt-4 sm:hidden'>
-            <h4 className='text-xl font-medium'>Link</h4>
+          <h4 className='mb-1 mt-4 text-xl font-medium'>Links</h4>
+          <div className='flex gap-5'>
+            {githubLink && (
+              <a href={githubLink} target='_blank'>
+                <AiFillGithub
+                  size={32}
+                  className='duration-300 hover:text-[#0f2434]'
+                />
+              </a>
+            )}
             <a href={url} target='_blank'>
-              {url}
+              <AiOutlineLink
+                size={32}
+                className='duration-300 hover:text-[#0f2434]'
+              />
             </a>
           </div>
         </div>

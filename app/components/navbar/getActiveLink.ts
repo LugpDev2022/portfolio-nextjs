@@ -1,17 +1,17 @@
 type Positions = {
   languagesSectionPosition: number;
   projectsSectionPosition: number;
-  skillsetSectionPosition: number;
+  programmingLanguagesPosition: number;
 };
 
 export const getActiveLink = ({
   languagesSectionPosition,
   projectsSectionPosition,
-  skillsetSectionPosition,
+  programmingLanguagesPosition,
 }: Positions): string => {
   const actualPosition = window.scrollY;
 
-  if (actualPosition >= skillsetSectionPosition) return 'skillset';
+  if (actualPosition >= programmingLanguagesPosition) return 'skillset';
 
   if (actualPosition >= projectsSectionPosition) return 'projects';
 

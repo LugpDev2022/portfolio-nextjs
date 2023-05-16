@@ -3,12 +3,12 @@ import { PositionsContext } from '../context/PositionsContext';
 import { getActiveLink } from './getActiveLink';
 
 export const useNavbar = () => {
-  const positions = useContext(PositionsContext);
+  const { positions } = useContext<any>(PositionsContext);
 
   const [showMobileNavbar, setshowMobileNavbar] = useState<boolean>(false);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
-  const [activeLink, setActiveLink] = useState<string>('');
+  const [activeLink, setActiveLink] = useState<string>('info');
 
   const handleMenuClick = () => setshowMobileNavbar(!showMobileNavbar);
   const toggleShowDropdown = () => setShowDropdown(!showDropdown);
@@ -33,9 +33,7 @@ export const useNavbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const value: any = { ...positions };
-
-      const activeLink = getActiveLink(value);
+      const activeLink = getActiveLink({ ...positions });
       setActiveLink(activeLink);
     };
 
@@ -43,6 +41,10 @@ export const useNavbar = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [positions]);
+
+  useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
 
   return {
     showDropdown,

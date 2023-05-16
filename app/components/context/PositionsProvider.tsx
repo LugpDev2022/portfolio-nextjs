@@ -2,7 +2,7 @@
 
 import { useEffect, useReducer } from 'react';
 import { PositionsContext } from './PositionsContext';
-import { getSectionsPosition } from './getSectionsPositions';
+import { getSectionPosition } from './getSectionPosition';
 import { positionsReducer } from './positionsReducer';
 import { Section, State } from './types';
 
@@ -32,8 +32,14 @@ const PositionsProvider: React.FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(positionsReducer, initialState);
 
   const setSectionRef = (section: Section, ref: any) => {
-    dispatch({ type: 'UPDATE REFERENCES', payload: { section, ref } });
+    dispatch({ type: 'UPDATE REFERENCE', payload: { section, ref } });
+    dispatch({
+      type: 'UPDATE POSITION',
+      payload: { section, distanceToTop: getSectionPosition(ref) },
+    });
   };
+
+  useEffect(() => console.log(state), [state]);
 
   return (
     <PositionsContext.Provider

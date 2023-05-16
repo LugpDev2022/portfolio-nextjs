@@ -8,11 +8,12 @@ import MobileDropdown from './MobileDropdown';
 import { useNavbar } from './useNavbar';
 
 import NavLink from './NavLink';
+import { useContext } from 'react';
+import { PositionsContext } from '../context/PositionsContext';
 
 //TODO: Animate the dropdown icon in a better way
 //TODO: Animate the dropdown when it appears
 //TODO: Add hover effects
-//TODO: Add transparency effect
 
 const Navbar = () => {
   const {
@@ -22,6 +23,7 @@ const Navbar = () => {
     handleMenuClick,
     activeLink,
   } = useNavbar();
+  const { positions } = useContext<any>(PositionsContext);
 
   return (
     <nav className='fixed top-0 z-10 w-full justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>

@@ -39,8 +39,6 @@ const PositionsProvider: React.FC<Props> = ({ children }) => {
     });
   };
 
-  useEffect(() => console.log(state), [state]);
-
   return (
     <PositionsContext.Provider
       value={{

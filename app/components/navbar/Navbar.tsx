@@ -34,10 +34,13 @@ const Navbar = () => {
           onClick={handleMenuClick}
         />
 
-        <a href='#' className={navbarStyles.navbarBrand}>
+        <span
+          onClick={() => scrollTo(0, 0)}
+          className={navbarStyles.navbarBrand}
+        >
           {/*<LC />*/}
           &lt;LC /&gt;
-        </a>
+        </span>
       </div>
 
       <hr
@@ -59,10 +62,16 @@ const Navbar = () => {
           sm:gap-7
         `}
       >
-        <NavLink href='#languages' active={activeLink === 'languages'}>
+        <NavLink
+          navigateTo={positions.languagesSectionPosition}
+          active={activeLink === 'languages'}
+        >
           Languages
         </NavLink>
-        <NavLink href='#projects' active={activeLink === 'projects'}>
+        <NavLink
+          navigateTo={positions.projectsSectionPosition}
+          active={activeLink === 'projects'}
+        >
           Projects
         </NavLink>
 

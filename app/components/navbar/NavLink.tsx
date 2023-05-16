@@ -1,16 +1,17 @@
 interface NavlinkProps {
   children: React.ReactNode;
-  href: string;
+  navigateTo: number;
   active?: boolean;
 }
 
-const NavLink: React.FC<NavlinkProps> = ({ children, href, active }) => (
+const NavLink: React.FC<NavlinkProps> = ({ children, navigateTo, active }) => (
   <li
-    className={`flex items-center duration-200 hover:text-[#4185b9] ${
+    className={`flex items-center duration-200 hover:cursor-pointer hover:text-[#4185b9] ${
       active ? 'underline' : ''
     }`}
+    onClick={() => scrollTo(0, navigateTo - 30)}
   >
-    <a href={href}>{children}</a>
+    {children}
   </li>
 );
 

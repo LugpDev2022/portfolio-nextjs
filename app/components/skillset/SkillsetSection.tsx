@@ -1,13 +1,12 @@
 import Image from 'next/image';
 import Subtitle from '../Subtitle';
 
-import { languageLogos } from './logos';
+import { bannerLogos, languageLogos } from './logos';
 
 import skillsetStyles from './skillset.module.css';
 
 import javascriptLogo from '../../images/logos/js.png';
 import SectionContainer from '../SectionContainer';
-import ShowLogos from './ShowLogos';
 
 const SkillsetSection = () => (
   <>
@@ -40,7 +39,18 @@ const SkillsetSection = () => (
       className='overflow-hidden bg-[#255880]'
     >
       <Subtitle>Frameworks/Libraries</Subtitle>
-      <ShowLogos />
+      {
+        <div className='mt-7 flex flex-wrap justify-evenly gap-6 sm:justify-between'>
+          {bannerLogos.map(({ src, alt }) => (
+            <div
+              key={alt}
+              className='flex basis-1/6 items-center sm:basis-[60px] md:basis-[70px]'
+            >
+              <Image src={src} alt={alt} />
+            </div>
+          ))}
+        </div>
+      }
     </SectionContainer>
     <SectionContainer section='tools' className='bg-[#0F2434]'>
       <Subtitle>Other Tools</Subtitle>

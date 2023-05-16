@@ -43,7 +43,7 @@ export const useNavbar = () => {
   }, [positions]);
 
   useEffect(() => {
-    scrollTo(0, 0);
+    scrollTo(0, window.scrollY - 0.1);
   }, []);
 
   return {

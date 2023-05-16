@@ -11,11 +11,11 @@ export const getActiveLink = ({
 }: Positions): string => {
   const actualPosition = window.scrollY;
 
-  if (actualPosition >= programmingLanguagesPosition) return 'skillset';
+  if (actualPosition >= programmingLanguagesPosition - 30) return 'skillset';
 
-  if (actualPosition >= projectsSectionPosition) return 'projects';
+  if (actualPosition >= projectsSectionPosition - 30) return 'projects';
 
-  if (actualPosition >= languagesSectionPosition) return 'languages';
+  if (actualPosition >= languagesSectionPosition - 30) return 'languages';
 
   return 'info';
 };

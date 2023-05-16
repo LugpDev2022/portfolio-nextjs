@@ -22,10 +22,10 @@ export const bannerLogos = [
     src: tailwindLogo,
     alt: 'tailwindcss',
   },
-  // {
-  //   src: nextLogo,
-  //   alt: 'nextjs',
-  // },
+  {
+    src: nextLogo,
+    alt: 'nextjs',
+  },
   {
     src: astroLogo,
     alt: 'astro',

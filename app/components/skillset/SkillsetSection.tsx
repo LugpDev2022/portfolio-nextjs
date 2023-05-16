@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Subtitle from '../Subtitle';
-import Banner from './Banner';
 
 import { languageLogos } from './logos';
 
@@ -8,6 +7,7 @@ import skillsetStyles from './skillset.module.css';
 
 import javascriptLogo from '../../images/logos/js.png';
 import SectionContainer from '../SectionContainer';
+import ShowLogos from './ShowLogos';
 
 const SkillsetSection = () => (
   <>
@@ -36,12 +36,14 @@ const SkillsetSection = () => (
       </div>
     </SectionContainer>
     <SectionContainer
-      disableDefaultStyles
       section='frameworks'
-      className='overflow-hidden bg-[#255880] py-10'
+      className='overflow-hidden bg-[#255880]'
     >
       <Subtitle>Frameworks/Libraries</Subtitle>
-      <Banner />
+      <ShowLogos />
+    </SectionContainer>
+    <SectionContainer section='tools' className='bg-[#0F2434]'>
+      <Subtitle>Other Tools</Subtitle>
     </SectionContainer>
   </>
 );

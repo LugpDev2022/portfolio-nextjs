@@ -11,9 +11,8 @@ import NavLink from './NavLink';
 import { useContext } from 'react';
 import { PositionsContext } from '../context/PositionsContext';
 
-//TODO: Animate the dropdown icon in a better way
 //TODO: Animate the dropdown when it appears
-//TODO: Add hover effects
+//TODO: Improve dropdown mobile design
 
 const Navbar = () => {
   const {
@@ -88,7 +87,11 @@ const Navbar = () => {
               size={28}
               className={`${
                 activeLink === 'skillset' ? 'text-[#4185b9]' : ''
-              } ${showDropdown ? 'rotate-180' : 'rotate-0'}`}
+              } ${
+                showDropdown
+                  ? navbarStyles.inverseRotateDropdownIcon
+                  : navbarStyles.rotateDropdownIcon
+              }`}
             />
           </span>
 

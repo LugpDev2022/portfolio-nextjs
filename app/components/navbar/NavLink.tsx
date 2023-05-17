@@ -1,3 +1,5 @@
+import navbarStyles from './navbar.module.css';
+
 interface NavlinkProps {
   children: React.ReactNode;
   navigateTo: number;
@@ -6,8 +8,8 @@ interface NavlinkProps {
 
 const NavLink: React.FC<NavlinkProps> = ({ children, navigateTo, active }) => (
   <li
-    className={`flex items-center duration-200 hover:cursor-pointer hover:text-[#4185b9] ${
-      active ? 'underline' : ''
+    className={`${navbarStyles.navLink} ${
+      active ? navbarStyles.activeLink : ''
     }`}
     onClick={() => scrollTo(0, navigateTo - 30)}
   >

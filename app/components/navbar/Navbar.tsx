@@ -26,7 +26,7 @@ const Navbar = () => {
   const { positions } = useContext<any>(PositionsContext);
 
   return (
-    <nav className='fixed top-0 z-10 w-full justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex'>
+    <nav className='fixed top-0 z-10 w-full justify-between bg-[#0B1822] px-8 py-3 text-white sm:flex sm:h-[62px]'>
       <div className='order-2 flex justify-between'>
         <GiHamburgerMenu
           size={38}
@@ -78,15 +78,17 @@ const Navbar = () => {
         <li className='flex flex-col justify-center'>
           <span
             id='skillsetDropdownButton'
-            className={`flex items-center duration-200 hover:cursor-pointer hover:text-[#4185b9] ${
-              activeLink === 'skillset' ? 'underline' : ''
+            className={`${navbarStyles.navLink} ${
+              activeLink === 'skillset' ? navbarStyles.activeLink : ''
             }`}
             onClick={toggleShowDropdown}
           >
             Skillset
             <IoMdArrowDropdown
               size={28}
-              className={showDropdown ? 'rotate-180' : 'rotate-0'}
+              className={`${
+                activeLink === 'skillset' ? 'text-[#4185b9]' : ''
+              } ${showDropdown ? 'rotate-180' : 'rotate-0'}`}
             />
           </span>
 

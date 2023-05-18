@@ -74,10 +74,10 @@ const Navbar = () => {
           Projects
         </NavLink>
 
-        <li className='flex flex-col justify-center'>
+        <li>
           <span
             id='skillsetDropdownButton'
-            className={`${navbarStyles.navLink} ${
+            className={`inline-flex ${navbarStyles.navLink} ${
               activeLink === 'skillset' ? navbarStyles.activeLink : ''
             }`}
             onClick={toggleShowDropdown}
@@ -85,7 +85,7 @@ const Navbar = () => {
             Skillset
             <IoMdArrowDropdown
               size={28}
-              className={`transition ${
+              className={`float-left transition duration-150 ${
                 activeLink === 'skillset' ? 'text-[#4185b9]' : ''
               } ${showDropdown ? 'rotate-180' : 'rotate-0'}`}
             />

@@ -7,13 +7,15 @@ interface NavlinkProps {
 }
 
 const NavLink: React.FC<NavlinkProps> = ({ children, navigateTo, active }) => (
-  <li
-    className={`${navbarStyles.navLink} ${
-      active ? navbarStyles.activeLink : ''
-    }`}
-    onClick={() => scrollTo(0, navigateTo - 30)}
-  >
-    {children}
+  <li>
+    <span
+      className={`${navbarStyles.navLink} ${
+        active ? navbarStyles.activeLink : ''
+      }`}
+      onClick={() => scrollTo(0, navigateTo - 30)}
+    >
+      {children}
+    </span>
   </li>
 );
 

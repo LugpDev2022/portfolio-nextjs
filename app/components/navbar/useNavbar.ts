@@ -43,6 +43,16 @@ export const useNavbar = () => {
   }, [positions]);
 
   useEffect(() => {
+    const handler = () => {
+      setshowMobileNavbar(false);
+    };
+
+    window.addEventListener('scroll', handler);
+
+    return () => window.removeEventListener('scroll', handler);
+  }, []);
+
+  useEffect(() => {
     scrollTo(0, window.scrollY - 0.1);
   }, []);
 

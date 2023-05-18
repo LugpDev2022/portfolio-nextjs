@@ -51,10 +51,10 @@ const Navbar = () => {
           order-1 
           ${showMobileNavbar ? 'flex' : 'hidden'} 
           flex-col
-          flex-wrap 
+          flex-wrap
           gap-2 
           text-xl 
-          font-semibold
+          font-semibold 
           tracking-wide
           sm:flex
           sm:flex-row

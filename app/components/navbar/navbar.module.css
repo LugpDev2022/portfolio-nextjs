@@ -56,10 +56,6 @@
   width: 100%;
 }
 
-.activeLink:before {
-  width: 100%;
-}
-
 @media (max-width: 639px) {
   .navLink:before {
     top: 3px;
@@ -69,5 +65,9 @@
 @media (min-width: 640px) {
   .navLink:before {
     bottom: -3px;
+  }
+
+  .activeLink:before {
+    width: 100%;
   }
 }

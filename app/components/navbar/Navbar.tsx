@@ -12,7 +12,6 @@ import { useContext } from 'react';
 import { PositionsContext } from '../context/PositionsContext';
 
 //TODO: Animate the dropdown when it appears
-//TODO: Improve dropdown mobile design
 
 const Navbar = () => {
   const {

@@ -86,8 +86,8 @@ const Navbar = () => {
             <IoMdArrowDropdown
               size={28}
               className={`float-right transition duration-150 ${
-                activeLink === 'skillset' ? 'text-[#4185b9]' : ''
-              } ${showDropdown ? 'rotate-180' : 'rotate-0'}`}
+                showDropdown ? 'rotate-180' : 'rotate-0'
+              }`}
             />
           </span>
 
